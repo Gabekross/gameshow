@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timer Controls</title>
+  <link rel="stylesheet" href="controls1.css">
+</head>
+<body>
+  <h1>Timer Controls</h1>
+
+  <div class="controls">
+    <h2>Player 1</h2>
+    <button onclick="startTimer(1)">Start Player 1</button>
+    <button onclick="pauseTimer(1)">Pause Player 1</button>
+  </div>
+
+  <div class="controls">
+    <h2>Player 2</h2>
+    <button onclick="startTimer(2)">Start Player 2</button>
+    <button onclick="pauseTimer(2)">Pause Player 2</button>
+  </div>
+
+  <div class="controls">
+    <h2>Actions</h2>
+    <button onclick="resetTimers()">Reset Timers</button>
+    <button onclick="showAnswer()">Show Answer</button> <!-- New Button -->
+  </div>
+
+  <script src="controls.js"></script>
+
+</body>
+</html>

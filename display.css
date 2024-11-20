@@ -1,0 +1,99 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Allows vertical stacking */
+  min-height: 100vh; /* Ensures the body takes the full viewport height */
+  background-color: #F0F8FF;
+  align-items: center;
+  justify-content: center;
+  background-image: url('./images/christmasImage.jpg'); /* Path to your background image */
+  background-size: cover;       /* Ensures the image covers the entire page */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+                /* Optional: Sets text color to contrast with the background */
+}
+
+main {
+  flex-grow: 1; /* Pushes the timers container to the bottom */
+  display: flex;
+  align-items: flex-end; /* Aligns the container at the bottom */
+  justify-content: center; /* Centers the container horizontally */
+  width: 100%;
+}
+
+.timers-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between timers */
+  border: 5px solid orange;
+ 
+  align-items: center; /* Aligns the timers vertically */
+  border-radius: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+.image-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+img {
+  width: 1000px;
+  height: 800px;
+  object-fit: cover;
+  border: 2px solid #333;
+  border-radius: 10px;
+}
+
+.timer1 {
+  padding: 2px;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  
+}
+.timer2 {
+  padding: 2px;
+  border-left: solid 10px blue;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+ 
+}
+
+.display {
+  font-size: 200px;
+  font-weight: bold;
+  margin: 20px auto;
+  padding: 10px;
+  width: 90%;
+  height: 90%;
+  line-height: 90%;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.answer-box {
+  margin-top: 10px;
+  padding: 15px;
+  width: 80%;
+  max-width: 400px;
+  max-height: 800px;
+  background-color: #fff;
+  border: 2px solid #333;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.answer-box p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timer Display</title>
+<link rel="stylesheet" href="display.css">
+</head>
+<body>
+  <h1>Timer Display</h1>
+
+  <!-- Image Container -->
+  <div class="image-container">
+    <img id="randomImage" src="" alt="Random Image" style="display: none;">
+  </div>
+
+  <!-- Answer Box -->
+  <div class="answer-box" id="answerBox" style="display: none;">
+    <p id="answerText"></p>
+  </div>
+  <!-- Timers Container -->
+  <main>
+    <div class="timers-container">
+      <div class="timer1">
+        <h2>Player 1</h2>
+        <div id="display1" class="display">60</div>
+      </div>
+  
+      <div class="timer2">
+        <h2>Player 2</h2>
+        <div id="display2" class="display">60</div>
+      </div>
+    </div> 
+  </main>
+  <footer>  
+    <div style="height: 50px;"></div>
+  </footer>
+  <script src="display1.js"></script>
+</body>
+</html>

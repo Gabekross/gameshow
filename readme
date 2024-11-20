@@ -1,0 +1,12 @@
+How It Works
+Reset Button:
+
+Pauses both timers using pauseTimer.
+Resets their values to 60.
+Sends updates to display.html to reflect the changes immediately.
+User Experience:
+
+Pressing the reset button stops any running timer and resets both displays to 60.
+Result
+A "Reset Both Timers" button is added to the controls page.
+Resetting works seamlessly without disrupting the real-time updates to the display page.
