@@ -81,6 +81,14 @@ function resetTimers() {
   console.log("Timers have been reset.");
 }
 
+// Function to make the timer display turn red for 3 seconds
+function turnRed(timerId) {
+  // Notify the display to turn the timer red
+  channel.postMessage({ action: "turnRed", timerId });
+
+  console.log(`Timer ${timerId} turning red for 3 seconds.`);
+}
+
 // Updated Function to Show a Random Image
 function showRandomImage() {
 
