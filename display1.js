@@ -89,6 +89,21 @@ channel.onmessage = (event) => {
     answerText.textContent = currentAnswer;
   }
 
+  if (action === "turnRed") {
+    const timerElement = document.getElementById(`display${timerId}`);
+    const imageElement = document.getElementById("randomImage");
+
+    // Change the timer's background color to red
+    timerElement.style.backgroundColor = "red";
+
+    // Reset the color after 3 seconds
+    setTimeout(() => {
+      timerElement.style.backgroundColor = ""; // Reset to default
+
+    }, 3000);
+
+  }
+
 
 };
 
