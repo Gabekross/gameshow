@@ -110,7 +110,13 @@ function showRandomImage() {
 }
 
 // Function to show the answer corresponding to the current image
-function showAnswer() {
+function showAnswer(timerId) {
+
+    // Pause the timer
+  if (intervals[timerId - 1]) {
+    clearInterval(intervals[timerId - 1]);
+    intervals[timerId - 1] = null;
+  }
   // Notify the display page to show the answer
   channel.postMessage({ action: "showAnswer" });
 
