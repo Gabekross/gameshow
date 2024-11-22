@@ -26,14 +26,14 @@ main {
 .timers-container {
   display: flex;
   justify-content: center;
-  gap: 20px; /* Space between timers */
-  border: 5px solid orange;
- 
+  gap: 10px; /* Space between timers */
+  border: 10px solid rgba(245, 245, 245, 0.874);
   align-items: center; /* Aligns the timers vertically */
-  border-radius: 12px;
+  border-radius: 0px;
   width: 100%;
   box-sizing: border-box;
   padding: 0 20px;
+  color: rgba(245, 245, 245, 0.874);
 }
 .image-container {
   margin-top: 30px;
@@ -49,23 +49,24 @@ img {
 }
 
 .timer1 {
-  padding: 2px;
-  border-radius: 10px;
+  padding: 1px;
+  border-radius: 0px;
+  border-right: solid 10px rgba(245, 245, 245, 0.874);
   width: 100%;
   text-align: center;
   
 }
 .timer2 {
-  padding: 2px;
-  border-left: solid 10px blue;
-  border-radius: 10px;
+  padding: 1px;
+  border-left: solid 10px rgba(245, 245, 245, 0.874);
+  border-radius: 0px;
   width: 100%;
   text-align: center;
  
 }
 
 .display {
-  font-size: 200px;
+  font-size: 150px;
   font-weight: bold;
   margin: 20px auto;
   padding: 10px;
@@ -77,23 +78,25 @@ img {
 }
 
 .answer-box {
-  margin-top: 10px;
+  margin-top: 240px;
   padding: 15px;
-  width: 80%;
-  max-width: 400px;
-  max-height: 800px;
-  background-color: #fff;
-  border: 2px solid #333;
-  border-radius: 10px;
+  width: 60%;
+  /* max-height: 800px; */
+  /* background-color: #fff; */
+  border: solid 10px rgba(245, 245, 245, 0.874);
+  border-radius: 0px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .answer-box p {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
   margin: 0;
+  font-size: 100px;
+  color: rgba(245, 245, 245, 0.874);
 }
 
+h1{
+  font-size: 80px;
+  color: rgba(245, 245, 245, 0.874);
+}
 
