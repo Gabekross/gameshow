@@ -172,3 +172,35 @@ function showAnswer(timerId) {
 
 
 
+// Countdown function
+function startCountdown() {
+  let countdownValue = 3;
+
+  // Notify display.html to show the initial countdown value
+  channel.postMessage({ action: "updateCountdown", value: countdownValue });
+
+  const interval = setInterval(() => {
+    countdownValue--;
+
+    if (countdownValue > 0) {
+      // Send the updated countdown value
+      channel.postMessage({ action: "updateCountdown", value: countdownValue });
+    } else {
+      clearInterval(interval);
+
+      // Notify that the countdown is complete
+      channel.postMessage({ action: "countdownComplete" });
+    }
+  }, 1000); // Update every second
+}
+
+// Trigger countdown when the button is clicked
+function triggerCountdown() {
+  console.log("Countdown triggered.");
+  startCountdown(); // Start the countdown
+}
+
+
+
+
+

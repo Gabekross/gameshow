@@ -100,3 +100,14 @@ h1{
   color: rgba(245, 245, 245, 0.874);
 }
 
+.countdownDisplay-box {
+  padding: 1px;
+  border-radius: 2px;
+  width: 50%;
+  text-align: center;
+  font-size: 400px;
+  color: rgba(238, 39, 55, 0.874);
+  font-family: 'Times New Roman';
+ 
+}
+

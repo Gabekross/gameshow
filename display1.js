@@ -104,8 +104,21 @@ channel.onmessage = (event) => {
 
   }
 
+  if (action === "updateCountdown") {
+    const countdownElement = document.getElementById("countdownDisplay");
+    countdownElement.textContent = value; // Update the countdown display
+    countdownElement.style.display = "block";
+    console.log(`Countdown updated: ${value}`);
+  }
 
+  if (action === "countdownComplete") {
+    const countdownElement = document.getElementById("countdownDisplay");
+    countdownElement.style.display = "none"; // Hide the countdown display
+    console.log("Countdown complete.");
+  }
 };
+
+
 
 
 
