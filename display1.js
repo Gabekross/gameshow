@@ -95,8 +95,6 @@ channel.onmessage = (event) => {
 
     // Change the timer's background color to red
     timerElement.style.backgroundColor = "red";
-    const audio = new Audio('./sounds/preview.mp3');
-    audio.play();
     // Reset the color after 3 seconds
     setTimeout(() => {
       timerElement.style.backgroundColor = ""; // Reset to default

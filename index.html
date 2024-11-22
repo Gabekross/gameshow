@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f9;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .link-container {
+      margin: 20px;
+      text-align: center;
+    }
+
+    button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    p {
+      margin: 5px 0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to the Clear the Board Game Web App</h1>
+
+  <div class="link-container">
+    <p>Go to the controls page to manage timers:</p>
+    <button onclick="openInNewTab('controls.html')">Open Controls Page</button>
+  </div>
+
+  <div class="link-container">
+    <p>Go to the display page to view timer displays:</p>
+    <button onclick="openInNewTab('display.html')">Open Display Page</button>
+  </div>
+
+  <script>
+    // Function to open pages in a new tab
+    function openInNewTab(url) {
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>
+
