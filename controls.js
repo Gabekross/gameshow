@@ -16,15 +16,15 @@ let imagesAndAnswers = []; // Array to hold images and answers
 // ];
 
 // Fetch the JSON data
-// async function fetchImagesAndAnswers() {
-//   try {
-//     const response = await fetch('imagesAndAnswers.json');
-//     imagesAndAnswers = await response.json();
-//     console.log('Images and answers loaded:', imagesAndAnswers);
-//   } catch (error) {
-//     console.error('Error loading images and answers:', error);
-//   }
-// }
+async function fetchImagesAndAnswers() {
+  try {
+    const response = await fetch('imagesAndAnswers.json');
+    imagesAndAnswers = await response.json();
+    console.log('Images and answers loaded:', imagesAndAnswers);
+  } catch (error) {
+    console.error('Error loading images and answers:', error);
+  }
+}
 async function loadCategory(categoryName) {
   try {
     const response = await fetch('imagesAndAnswers.json'); // Fetch the single JSON file
@@ -107,6 +107,8 @@ function resetTimers() {
 // Function to make the timer display turn red for 3 seconds
 function turnRed(timerId) {
   // Notify the display to turn the timer red
+  const audio = new Audio('./sounds/countdown3.mp3');
+  audio.play();
   channel.postMessage({ action: "turnRed", timerId });
 
   console.log(`Timer ${timerId} turning red for 3 seconds.`);
@@ -178,6 +180,9 @@ function startCountdown() {
 
   // Notify display.html to show the initial countdown value
   channel.postMessage({ action: "updateCountdown", value: countdownValue });
+
+  const audio = new Audio('./sounds/preview.mp3');
+  audio.play();
 
   const interval = setInterval(() => {
     countdownValue--;
