@@ -3,6 +3,7 @@ const channel = new BroadcastChannel('timer_channel');
 
 let intervals = [null, null];
 let timers = [60, 60];
+let currentIndex = 0; // Counter to track the current image index
 let imagesAndAnswers = []; // Array to hold images and answers
 
 // // Array of image paths and their corresponding answers
@@ -52,8 +53,9 @@ function startTimer(timerId) {
     }, 1000);
   }
 
-  // Show a random image when the timer starts
-  showRandomImage();
+  // Show a image when the timer starts
+  // showRandomImage();
+  showSequentialImage();
 }
 
 
@@ -89,25 +91,50 @@ function turnRed(timerId) {
   console.log(`Timer ${timerId} turning red for 3 seconds.`);
 }
 
-// Updated Function to Show a Random Image
-function showRandomImage() {
+// // Updated Function to Show a Random Image
+// function showRandomImage() {
 
+//   if (imagesAndAnswers.length === 0) {
+//     console.warn('No images available to display.');
+//     return;
+//   }
+//   const randomIndex = Math.floor(Math.random() * imagesAndAnswers.length);
+//   const randomImage = imagesAndAnswers[randomIndex];
+
+//   // Notify the display page to show the image and track the current image
+//   channel.postMessage({
+//     action: "showImage",
+//     imageSrc: randomImage.src,
+//     answer: randomImage.answer // Pass the answer for tracking
+//   });
+ 
+// }
+
+
+
+function showSequentialImage() {
   if (imagesAndAnswers.length === 0) {
     console.warn('No images available to display.');
     return;
   }
-  const randomIndex = Math.floor(Math.random() * imagesAndAnswers.length);
-  const randomImage = imagesAndAnswers[randomIndex];
+
+  // Select the current image and answer based on the index
+  const currentImage = imagesAndAnswers[currentIndex];
 
   // Notify the display page to show the image and track the current image
   channel.postMessage({
     action: "showImage",
-    imageSrc: randomImage.src,
-    answer: randomImage.answer // Pass the answer for tracking
+    imageSrc: currentImage.src,
+    answer: currentImage.answer // Pass the answer for tracking
   });
 
-  console.log(`Showing image: ${randomImage.src}`);
+  console.log(`Displaying image: ${currentImage.src}`);
+
+  // Increment the index for the next call, looping back to the start if needed
+  currentIndex = (currentIndex + 1) % imagesAndAnswers.length;
 }
+
+
 
 // Function to show the answer corresponding to the current image
 function showAnswer(timerId) {
