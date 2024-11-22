@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Timer Controls</title>
-  <link rel="stylesheet" href="controls1.css">
+  <link rel="stylesheet" href="controls1.css">  
 </head>
 <body>
   <h1>Timer Controls</h1>
@@ -31,8 +31,14 @@
     <h2>Actions</h2>
     <button onclick="resetTimers()">Reset Timers</button>
     <button onclick="showAnswer()">Show Answer</button> <!-- New Button -->
-  </div>
+    <select class ="categoryContainer" id="categorySelect" onchange="changeCategory(this.value)">
+      <option value="category1">Category 1</option>
+      <option value="category2">Category 2</option>
+      <option value="category3">Category 3</option>
+    </select>
+    <script src="controls.js"></script>
 
+  </div>
   <script src="controls.js"></script>
 
 </body>

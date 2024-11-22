@@ -1,8 +1,29 @@
-[
+{
+  "category1":[
     { "src": "./images/hiking3.jpg", "answer": "Answer 1 for " },
     { "src": "./images/iceland.jpg", "answer": "Answer 2 for " },
     { "src": "./images/northern1.jpeg", "answer": "Answer 3 for " },
     { "src": "./images/image4.jpg", "answer": "Answer 4 for " },
     { "src": "./images/image5.jpg", "answer": "Answer 5 for " },
     {"src": "./images/image5.jpg", "answer": "Answer 5 for "}
+  ],
+
+  "category2":[
+    { "src": "./images/hiking3.jpg", "answer": "Answer 1B for " },
+    { "src": "./images/iceland.jpg", "answer": "Answer 2 for " },
+    { "src": "./images/northern1.jpeg", "answer": "Answer 3 for " },
+    { "src": "./images/image4.jpg", "answer": "Answer 4 for " },
+    { "src": "./images/image5.jpg", "answer": "Answer 5 for " },
+    {"src": "./images/image5.jpg", "answer": "Answer 5 for "}
+  ],
+
+  "category3":[
+    { "src": "./images/hiking3.jpg", "answer": "Answer 1C for " },
+    { "src": "./images/iceland.jpg", "answer": "Answer 2 for " },
+    { "src": "./images/northern1.jpeg", "answer": "Answer 3 for " },
+    { "src": "./images/image4.jpg", "answer": "Answer 4 for " },
+    { "src": "./images/image5.jpg", "answer": "Answer 5 for " },
+    {"src": "./images/image5.jpg", "answer": "Answer 5 for "}
   ]
+
+}

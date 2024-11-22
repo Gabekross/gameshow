@@ -16,18 +16,39 @@ let imagesAndAnswers = []; // Array to hold images and answers
 // ];
 
 // Fetch the JSON data
-async function fetchImagesAndAnswers() {
+// async function fetchImagesAndAnswers() {
+//   try {
+//     const response = await fetch('imagesAndAnswers.json');
+//     imagesAndAnswers = await response.json();
+//     console.log('Images and answers loaded:', imagesAndAnswers);
+//   } catch (error) {
+//     console.error('Error loading images and answers:', error);
+//   }
+// }
+async function loadCategory(categoryName) {
   try {
-    const response = await fetch('imagesAndAnswers.json');
-    imagesAndAnswers = await response.json();
-    console.log('Images and answers loaded:', imagesAndAnswers);
+    const response = await fetch('imagesAndAnswers.json'); // Fetch the single JSON file
+    const data = await response.json();
+    imagesAndAnswers = data[categoryName]; // Extract the specific category
+    console.log(`Loaded category: ${categoryName}`, imagesAndAnswers);
   } catch (error) {
-    console.error('Error loading images and answers:', error);
+    console.error(`Error loading category ${categoryName}:`, error);
   }
 }
 
-// Call the fetch function on load
-fetchImagesAndAnswers();
+
+
+// // Call the fetch function on load
+// fetchImagesAndAnswers();
+loadCategory();
+
+function changeCategory(categoryName) {
+  loadCategory(categoryName).then(() => {
+    console.log(`Category changed to: ${categoryName}`);
+    currentIndex = 0; // Reset the index for sequential selection
+  });
+}
+
 
 // Function to send timer updates to the display page
 function updateDisplay(timerId) {
