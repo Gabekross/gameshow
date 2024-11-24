@@ -6,15 +6,6 @@ let timers = [60, 60];
 let currentIndex = 0; // Counter to track the current image index
 let imagesAndAnswers = []; // Array to hold images and answers
 
-// // Array of image paths and their corresponding answers
-// const imagesAndAnswers = [
-//   { src: "./images/hiking3.jpg", answer: "Answer 1 for Image 1" },
-//   { src: "./images/iceland.jpg", answer: "Answer 2 for Image 2" },
-//   { src: "./images/northern1.jpeg", answer: "Answer 3 for Image 3" },
-//   { src: "./images/image4.jpg", answer: "Answer 4 for Image 4" },
-//   { src: "./images/image5.jpg", answer: "Answer 5 for Image 5" }
-// ];
-
 // Fetch the JSON data
 async function fetchImagesAndAnswers() {
   try {
@@ -36,10 +27,8 @@ async function loadCategory(categoryName) {
   }
 }
 
+// Call the fetch function on load
 
-
-// // Call the fetch function on load
-// fetchImagesAndAnswers();
 loadCategory();
 
 function changeCategory(categoryName) {
@@ -48,7 +37,6 @@ function changeCategory(categoryName) {
     currentIndex = 0; // Reset the index for sequential selection
   });
 }
-
 
 // Function to send timer updates to the display page
 function updateDisplay(timerId) {
@@ -75,7 +63,6 @@ function startTimer(timerId) {
   }
 
   // Show a image when the timer starts
-  // showRandomImage();
   showSequentialImage();
 }
 
@@ -114,27 +101,6 @@ function turnRed(timerId) {
   console.log(`Timer ${timerId} turning red for 3 seconds.`);
 }
 
-// // Updated Function to Show a Random Image
-// function showRandomImage() {
-
-//   if (imagesAndAnswers.length === 0) {
-//     console.warn('No images available to display.');
-//     return;
-//   }
-//   const randomIndex = Math.floor(Math.random() * imagesAndAnswers.length);
-//   const randomImage = imagesAndAnswers[randomIndex];
-
-//   // Notify the display page to show the image and track the current image
-//   channel.postMessage({
-//     action: "showImage",
-//     imageSrc: randomImage.src,
-//     answer: randomImage.answer // Pass the answer for tracking
-//   });
- 
-// }
-
-
-
 function showSequentialImage() {
   if (imagesAndAnswers.length === 0) {
     console.warn('No images available to display.');
@@ -157,8 +123,6 @@ function showSequentialImage() {
   currentIndex = (currentIndex + 1) % imagesAndAnswers.length;
 }
 
-
-
 // Function to show the answer corresponding to the current image
 function showAnswer(timerId) {
 
@@ -171,8 +135,6 @@ function showAnswer(timerId) {
   channel.postMessage({ action: "showAnswer" });
 
 }
-
-
 
 // Countdown function
 function startCountdown() {
