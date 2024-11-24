@@ -1,6 +1,6 @@
 {
   "category1":[
-    { "src": "./images/hiking3.jpg", "answer": "Answer 1 for " },
+    { "src": "./images/g11.jpg", "answer": "Answer 1 for " },
     { "src": "./images/iceland.jpg", "answer": "Answer 2 for " },
     { "src": "./images/northern1.jpeg", "answer": "Answer 3 for " },
     { "src": "./images/image4.jpg", "answer": "Answer 4 for " },
@@ -9,7 +9,7 @@
   ],
 
   "category2":[
-    { "src": "./images/hiking3.jpg", "answer": "Answer 1B for " },
+    { "src": "./images/blender.jpg", "answer": "Answer 1B for " },
     { "src": "./images/iceland.jpg", "answer": "Answer 2 for " },
     { "src": "./images/northern1.jpeg", "answer": "Answer 3 for " },
     { "src": "./images/image4.jpg", "answer": "Answer 4 for " },
@@ -18,12 +18,28 @@
   ],
 
   "category3":[
-    { "src": "./images/hiking3.jpg", "answer": "Answer 1C for " },
-    { "src": "./images/iceland.jpg", "answer": "Answer 2 for " },
-    { "src": "./images/northern1.jpeg", "answer": "Answer 3 for " },
-    { "src": "./images/image4.jpg", "answer": "Answer 4 for " },
+    { "src": "./images/isaiah41v10.JPG", "answer": "Answer 1C for " },
+    { "src": "./images/joshua1v9.JPG", "answer": "Answer 2 for " },
+    { "src": "./images/psalm23v1.JPG", "answer": "Answer 3 for " },
+    { "src": "./images/Exodus14v14.JPG", "answer": "Answer 4 for " },
     { "src": "./images/image5.jpg", "answer": "Answer 5 for " },
     {"src": "./images/image5.jpg", "answer": "Answer 5 for "}
+  ],
+
+  "bibleVerse":[
+    { "src": "./images/bibleVerse/1Peter5v7.JPG", "answer": "1Peter 5:7 " },
+    { "src": "./images/bibleVerse/g11.JPG", "answer": "Genesis 1:1 " },
+    { "src": "./images/bibleVerse/Hebrew11v1.JPG", "answer": "Hebrew 11:1 " },
+    { "src": "./images/bibleVerse/James1v22.JPG", "answer": "James 1:22 " },
+    { "src": "./images/bibleVerse/John3v16.JPG", "answer": "John 3:16 " },
+    {"src": "./images/bibleVerse/Joshua1v9.JPG", "answer": "Joshua 1:9"},
+    {"src": "./images/bibleVerse/Malachi3v10.JPG", "answer": "Malachi 3:10"},
+    { "src": "./images/bibleVerse/Revelation1v8.JPG", "answer": "Genesis 1:1 " },
+    { "src": "./images/bibleVerse/Hebrew11v1.JPG", "answer": "Hebrew 11:1 " },
+    { "src": "./images/bibleVerse/James1v22.JPG", "answer": "James 1:22 " },
+    { "src": "./images/bibleVerse/John3v16.JPG", "answer": "John 3:16 " },
+    {"src": "./images/bibleVerse/Joshua1v9.JPG", "answer": "Joshua 1:9"},
+    {"src": "./images/bibleVerse/Joshua1v9.JPG", "answer": "Joshua 1:9"}
   ]
 
 }

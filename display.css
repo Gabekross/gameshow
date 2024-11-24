@@ -32,7 +32,7 @@ main {
   border-radius: 0px;
   width: 100%;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 5px;
   color: rgba(245, 245, 245, 0.874);
 }
 .image-container {
@@ -41,8 +41,8 @@ main {
 }
 
 img {
-  width: 800px;
-  height: 500px;
+  width: 1000px;
+  height: 520px;
   object-fit: cover;
   border: 2px solid #333;
   border-radius: 10px;
@@ -67,7 +67,7 @@ img {
   font-size: 150px;
   font-weight: bold;
   margin: 20px auto;
-  padding: 10px;
+  padding: 5px;
   width: 90%;
   height: 70%;
   line-height: 90%;
@@ -89,7 +89,7 @@ img {
 
 .answer-box p {
   margin: 0;
-  font-size: 80px;
+  font-size: 90px;
   color: rgba(245, 245, 245, 0.874);
 }
 
