@@ -101,3 +101,30 @@ img {
  
 }
 
+/* Keyframes for the animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Style for the animated image */
+.animated-image {
+  display: block;
+  margin: 20px auto;
+  width: 100px;
+  height: 100px;
+  animation: pulse 2s infinite;
+}
+
+/* Hidden state for the image */
+.hidden {
+  display: none;
+}
+

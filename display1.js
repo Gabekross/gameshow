@@ -72,6 +72,10 @@ channel.onmessage = (event) => {
     const countdownElement = document.getElementById("countdownDisplay");
     countdownElement.textContent = value; // Update the countdown display
     countdownElement.style.display = "block";
+
+        // Hide the animated image when countdown starts
+    const animatedImage = document.getElementById("animatedImage");
+    animatedImage.classList.add("hidden");
     console.log(`Countdown updated: ${value}`);
   }
 
