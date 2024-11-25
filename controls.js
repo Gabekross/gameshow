@@ -102,9 +102,13 @@ function turnRed(timerId) {
   // Allow "Show Answer" to work without pausing the timer
   allowShowAnswerWhileRunning[timerId - 1] = true;
 
-  // Notify the display to turn the timer red
-  const audio = new Audio('./sounds/countdown3.mp3');
-  audio.play();
+  // // Notify the display to turn the timer red
+  const audioA = new Audio('./sounds/buzzer.mp3');
+  audioA.play();
+
+  
+  // const audio = new Audio('./sounds/countdown3.mp3');
+  // audio.play();
   channel.postMessage({ action: "turnRed", timerId });
 
   console.log(`Timer ${timerId} turning red for 3 seconds.`);
@@ -118,6 +122,9 @@ function turnRed(timerId) {
 
 // Function to show the answer corresponding to the current image
 function showAnswer(timerId) {
+
+  const audio = new Audio('./sounds/correctanswer.mp3');
+  audio.play();
   if (allowShowAnswerWhileRunning[timerId - 1]) {
     // During "Turn Red," show the answer without pausing the timer
     channel.postMessage({ action: "showAnswer" });
@@ -147,8 +154,8 @@ function resetTimers() {
   allowShowAnswerWhileRunning = [false, false];
 
   // Notify the display page to update the timer displays
-  channel.postMessage({ timerId: 1, value: 60, action: "update" });
-  channel.postMessage({ timerId: 2, value: 60, action: "update" });
+  channel.postMessage({ timerId: 1, value: 45, action: "update" });
+  channel.postMessage({ timerId: 2, value: 45, action: "update" });
   //     // Hide any displayed image and answer
   channel.postMessage({ action: "hideImage" });
   console.log("Timers have been reset.");
