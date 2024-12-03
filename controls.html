@@ -12,30 +12,39 @@
   <div class="controls">
     <h2>Player 1</h2>
     <button onclick="startTimer(1)">Start Player 1</button>
+    
     <button onclick="pauseTimer(1)">Pause Player 1</button>
     <button onclick="showAnswer(1)">Show Answer</button> <!-- New Button -->
-    <button onclick="turnRed(1)">Turn Red for 3 Seconds</button>
+    <button onclick="turnRed(1)">Turn Red (PASS)</button>
+    <div id="player1Answer" class="answer-box">Answer: Hidden</div> <!-- Answer for Player 1 -->
 
   </div>
 
   <div class="controls">
     <h2>Player 2</h2>
     <button onclick="startTimer(2)">Start Player 2</button>
+
     <button onclick="pauseTimer(2)">Pause Player 2</button>
     <button onclick="showAnswer(2)">Show Answer</button> <!-- New Button -->
-    <button onclick="turnRed(2)">Turn Red for 3 Seconds</button>
+    <button onclick="turnRed(2)">Turn Red (PASS)</button>
+    <div id="player2Answer" class="answer-box">Answer: Hidden</div> <!-- Answer for Player 2 -->
     
   </div>
 
   <div class="controls">
     <h2>Actions</h2>
+    <button onclick="triggerReset()">Reset Display</button> <!-- New Reset Button -->
     <button onclick="triggerCountdown()">Start Game:3s Countdown</button> <!-- New Countdown Button -->
     <button onclick="resetTimers()">Reset Timers</button>
     <select class ="categoryContainer" id="categorySelect" onchange="changeCategory(this.value)">
       <option value="category1">Category 1</option>
-      <option value="category2">Category 2</option>
-      <option value="category3">Category 3</option>
+      <option value="category2">Logos</option>
+      <option value="category3">Common Items</option>
       <option value="bibleVerse">Bible Verse</option>
+      <option value="category1">Compound Words</option>
+      <option value="category2">Category 6</option>
+      <option value="category3">Category 7</option>
+      <option value="category3">Category 8</option>
     </select>
     <script src="controls.js"></script>
 

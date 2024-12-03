@@ -12,7 +12,6 @@ body {
   background-size: cover;       /* Ensures the image covers the entire page */
   background-position: center;  /* Centers the image */
   background-repeat: no-repeat; /* Prevents the image from repeating */
-                /* Optional: Sets text color to contrast with the background */
 }
 
 main {
@@ -27,13 +26,15 @@ main {
   display: flex;
   justify-content: center;
   gap: 2px; /* Space between timers */
-  border: 5px solid rgba(245, 245, 245, 0.874);
+  border: solid 10px rgba(108, 236, 28, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
   align-items: center; /* Aligns the timers vertically */
-  border-radius: 0px;
   width: 100%;
   box-sizing: border-box;
   padding: 5px;
   color: rgba(245, 245, 245, 0.874);
+  background-color: rgba(236, 28, 52, 0.5);
 }
 .image-container {
   margin-top: 20px;
@@ -44,8 +45,9 @@ img {
   width: 1000px;
   height: 520px;
   object-fit: cover;
-  border: 2px solid #333;
-  border-radius: 10px;
+  border: solid 10px rgba(108, 236, 28, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
 
 }
 .timer1 {
@@ -78,11 +80,15 @@ img {
 .answer-box {
   margin-top: 30px;
   padding: 5px;
-  width: 70%;
-  border: solid 5px rgba(245, 245, 245, 0.874);
+  width: 60%;
+  border: solid 5px rgba(108, 236, 28, 0.2);
   border-radius: 2px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: rgba(108, 236, 28, 0.4);
+  border: solid 10px rgba(108, 236, 28, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+
 }
 
 .answer-box p {
@@ -117,9 +123,11 @@ img {
 /* Style for the animated image */
 .animated-image {
   display: block;
-  margin: 20px auto;
-  width: 100px;
-  height: 100px;
+  width: 20%;
+  height: 20%;
+  text-align: center;
+  font-size: 50px;
+  color: rgba(168, 238, 39, 0.874);
   animation: pulse 2s infinite;
 }
 

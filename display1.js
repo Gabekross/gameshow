@@ -38,11 +38,14 @@ channel.onmessage = (event) => {
     // Hide the image and answer
     imageElement.style.display = "none";
     imageElement.src = ""; // Clear the image source
+
+    const answerBox = document.getElementById("answerBox");
+
     answerBox.style.display = "none";
     document.getElementById("answerText").textContent = "";
 
-    currentImage = null; // Reset the current image and answer tracker
-    currentAnswer = null;
+    // currentImage = null; // Reset the current image and answer tracker
+    // currentAnswer = null;
   }
 
   if (action === "showAnswer") {
@@ -51,7 +54,7 @@ channel.onmessage = (event) => {
 
     // Display the answer box and update the text
     answerBox.style.display = "block";
-    answerText.textContent = currentAnswer;
+    answerText.textContent = currentAnswer || "No answer available";
   }
 
   if (action === "turnRed") {
