@@ -33,7 +33,7 @@ channel.onmessage = (event) => {
 
   if (action === "hideImage") {
     const imageElement = document.getElementById("randomImage");
-    //const answerElement = document.getElementById("answerBox");
+    const answerElement = document.getElementById("answerBox");
 
     // Hide the image and answer
     imageElement.style.display = "none";
@@ -44,8 +44,8 @@ channel.onmessage = (event) => {
     answerBox.style.display = "none";
     document.getElementById("answerText").textContent = "";
 
-    // currentImage = null; // Reset the current image and answer tracker
-    // currentAnswer = null;
+     currentImage = null; // Reset the current image and answer tracker
+     currentAnswer = null;
   }
 
   if (action === "showAnswer") {
@@ -87,7 +87,7 @@ channel.onmessage = (event) => {
     countdownElement.style.display = "none"; // Hide the countdown display
     console.log("Countdown complete.");
   }
-};
+}
 
 
 

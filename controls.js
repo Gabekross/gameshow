@@ -47,27 +47,27 @@ function updateDisplay(timerId) {
 }
 
 // Function to start a timer and show a random image
-// function startTimer(timerId) {
-//   const otherTimerId = timerId === 1 ? 2 : 1;
+function startTimer(timerId) {
+   const otherTimerId = timerId === 1 ? 2 : 1;
 
-//   // Pause the other timer if it's running
-//   pauseTimer(otherTimerId);
+//   Pause the other timer if it's running
+pauseTimer(otherTimerId);
 
-//   if (!intervals[timerId - 1]) {
-//     intervals[timerId - 1] = setInterval(() => {
-//       if (timers[timerId - 1] > 0) {
-//         timers[timerId - 1]--;
-//         updateDisplay(timerId);
-//       } else {
-//         clearInterval(intervals[timerId - 1]);
-//         intervals[timerId - 1] = null;
-//       }
-//     }, 1000);
-//   }
+ if (!intervals[timerId - 1]) {
+     intervals[timerId - 1] = setInterval(() => {
+       if (timers[timerId - 1] > 0) {
+         timers[timerId - 1]--;
+         updateDisplay(timerId);
+       } else {
+         clearInterval(intervals[timerId - 1]);
+         intervals[timerId - 1] = null;
+       }
+     }, 1000);
+   }
 
-//   // Show a image when the timer starts
-//   showSequentialImage();
-// }
+//    Show a image when the timer starts
+   showSequentialImage();
+ }
 
 
 function startTimer(timerId) {
@@ -105,16 +105,16 @@ function startTimer(timerId) {
   // Show the current image and answer
   showSequentialImage();
 
-  // // Update the answer box in controls.html
-  // const answerBoxId = timerId === 1 ? "player1Answer" : "player2Answer";
-  // const answerBox = document.getElementById(answerBoxId);
+  // Update the answer box in controls.html
+  const answerBoxId = timerId === 1 ? "player1Answer" : "player2Answer";
+   const answerBox = document.getElementById(answerBoxId);
 
-  // if (imagesAndAnswers.length > 0) {
-  //   const currentImage = imagesAndAnswers[currentIndex];
-  //   answerBox.textContent = `Answer: ${currentImage.answer}`; // Display the current answer
-  // } else {
-  //   answerBox.textContent = "Answer: No images available";
-  // }
+   if (imagesAndAnswers.length > 0) {
+     const currentImage = imagesAndAnswers[currentIndex];
+     answerBox.textContent = `Answer: ${currentImage.answer}`; // Display the current answer
+   } else {
+     answerBox.textContent = "Answer: No images available";
+   }
 }
 
 
@@ -210,7 +210,7 @@ function resetTimers() {
   // Notify the display page to update the timer displays
   channel.postMessage({ timerId: 1, value: 30, action: "update" });
   channel.postMessage({ timerId: 2, value: 30, action: "update" });
-  //     // Hide any displayed image and answer
+  //     Hide any displayed image and answer
   channel.postMessage({ action: "hideImage" });
   console.log("Timers have been reset.");
 }
