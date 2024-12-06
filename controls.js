@@ -46,7 +46,7 @@ function updateDisplay(timerId) {
   channel.postMessage({ timerId, value: timers[timerId - 1], action: "update" });
 }
 
-// Function to start a timer and show a random image
+
 // function startTimer(timerId) {
 //   const otherTimerId = timerId === 1 ? 2 : 1;
 
@@ -68,7 +68,6 @@ function updateDisplay(timerId) {
 //   // Show a image when the timer starts
 //   showSequentialImage();
 // }
-
 
 function startTimer(timerId) {
   const otherTimerId = timerId === 1 ? 2 : 1;
@@ -101,28 +100,13 @@ function startTimer(timerId) {
   } else {
       console.warn("No images available to display.");
   }
-
   // Show the current image and answer
   showSequentialImage();
-
-  // // Update the answer box in controls.html
-  // const answerBoxId = timerId === 1 ? "player1Answer" : "player2Answer";
-  // const answerBox = document.getElementById(answerBoxId);
-
-  // if (imagesAndAnswers.length > 0) {
-  //   const currentImage = imagesAndAnswers[currentIndex];
-  //   answerBox.textContent = `Answer: ${currentImage.answer}`; // Display the current answer
-  // } else {
-  //   answerBox.textContent = "Answer: No images available";
-  // }
-  
   },1000);
 
 
 
 }
-
-
 
 // Function to pause a timer
 function pauseTimer(timerId) {
@@ -219,7 +203,6 @@ function resetTimers() {
   channel.postMessage({ action: "hideImage" });
   console.log("Timers have been reset.");
 }
-
 
 // Countdown function
 function startCountdown() {
