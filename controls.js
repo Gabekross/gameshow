@@ -46,84 +46,6 @@ function updateDisplay(timerId) {
   channel.postMessage({ timerId, value: timers[timerId - 1], action: "update" });
 }
 
-// Function to start a timer and show a random image
-// function startTimer(timerId) {
-//   const otherTimerId = timerId === 1 ? 2 : 1;
-
-//   // Pause the other timer if it's running
-//   pauseTimer(otherTimerId);
-
-//   if (!intervals[timerId - 1]) {
-//     intervals[timerId - 1] = setInterval(() => {
-//       if (timers[timerId - 1] > 0) {
-//         timers[timerId - 1]--;
-//         updateDisplay(timerId);
-//       } else {
-//         clearInterval(intervals[timerId - 1]);
-//         intervals[timerId - 1] = null;
-//       }
-//     }, 1000);
-//   }
-
-//   // Show a image when the timer starts
-//   showSequentialImage();
-// }
-
-
-function startTimer(timerId) {
-  const otherTimerId = timerId === 1 ? 2 : 1;
-
-  // Pause the other timer if it's running
-  pauseTimer(otherTimerId);
-
-  if (!intervals[timerId - 1]) {
-    intervals[timerId - 1] = setInterval(() => {
-      if (timers[timerId - 1] > 0) {
-        timers[timerId - 1]--;
-        updateDisplay(timerId);
-      } else {
-        clearInterval(intervals[timerId - 1]);
-        intervals[timerId - 1] = null;
-      }
-    }, 1000);
-  }
-
-
-    // Get the current image and answer (before incrementing index in showSequentialImage)
-  if (imagesAndAnswers.length > 0) {
-    const currentImage = imagesAndAnswers[currentIndex];
-    const answerBoxId = timerId === 1 ? "player1Answer" : "player2Answer";
-    const answerBox = document.getElementById(answerBoxId);
-  
-      // Update the answer box in controls.html
-     answerBox.textContent = `Answer: ${currentImage.answer}`;
-      console.log(`Answer for Timer ${timerId}: ${currentImage.answer}`);
-  } else {
-      console.warn("No images available to display.");
-  }
-
-  // Show the current image and answer
-  showSequentialImage();
-
-  // // Update the answer box in controls.html
-  // const answerBoxId = timerId === 1 ? "player1Answer" : "player2Answer";
-  // const answerBox = document.getElementById(answerBoxId);
-
-  // if (imagesAndAnswers.length > 0) {
-  //   const currentImage = imagesAndAnswers[currentIndex];
-  //   answerBox.textContent = `Answer: ${currentImage.answer}`; // Display the current answer
-  // } else {
-  //   answerBox.textContent = "Answer: No images available";
-  // }
-}
-
-
-
-// Function to pause a timer
-function pauseTimer(timerId) {
-  clearInterval(intervals[timerId - 1]);
-  intervals[timerId - 1] = null;
-}
 
 function showSequentialImage() {
   if (imagesAndAnswers.length === 0) {
@@ -215,7 +137,6 @@ function resetTimers() {
   console.log("Timers have been reset.");
 }
 
-
 // Countdown function
 function startCountdown() {
   let countdownValue = 3;
@@ -249,8 +170,4 @@ function triggerCountdown() {
 function triggerReset() {
   console.log("Reset action triggered.");
   channel.postMessage({ action: "resetDisplay" }); // Send reset message
-}
-
-
-
-
+};
