@@ -15,16 +15,27 @@ body {
   button {
     margin: 10px;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
   }
 
   .categoryContainer{
     width: 300px; /* Adjust the width */
     height: 50px; /* Adjust the height */
-    font-size: 18px; /* Adjust the font size */
+    font-size: 25px; /* Adjust the font size */
     padding: 5px; /* Add padding for better spacing */
     border-radius: 5px; /* Optional: Add rounded corners */
     border: 2px solid #333; /* Optional: Add a border */
+
+  }
+
+  .answer-box{
+    
+   
+    font-size: 25px;
+    color: rgba(255, 0, 0, 0.879);
+    font-family:   monospace;
+    font-weight: bold;
+    border: 2px solid red;
 
   }

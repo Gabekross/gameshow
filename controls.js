@@ -88,8 +88,8 @@ function startTimer(timerId) {
     }, 1000);
   }
 
-
-    // Get the current image and answer (before incrementing index in showSequentialImage)
+  setTimeout(() => {
+        // Get the current image and answer (before incrementing index in showSequentialImage)
   if (imagesAndAnswers.length > 0) {
     const currentImage = imagesAndAnswers[currentIndex];
     const answerBoxId = timerId === 1 ? "player1Answer" : "player2Answer";
@@ -115,6 +115,11 @@ function startTimer(timerId) {
   // } else {
   //   answerBox.textContent = "Answer: No images available";
   // }
+  
+  },1000);
+
+
+
 }
 
 
