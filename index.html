@@ -53,20 +53,61 @@
   <h1>CLEAR THE</h1>
 
   <div class="link-container">
+    <p>Go to the Randomizer Page to add players and select players:</p>
+    <button onclick="openWindow1('randomizer.html')">Open Randomizer Page</button>
+  </div>
+
+  <div class="link-container">
     <p>Go to the controls page to manage timers:</p>
-    <button onclick="openInNewTab('controls.html')">Open Controls Page</button>
+    <button onclick="openWindow3('controls.html')">Open Controls Page</button>
   </div>
 
   <div class="link-container">
     <p>Go to the display page to view timer displays:</p>
-    <button onclick="openInNewTab('display.html')">Open Display Page</button>
+    <button onclick="openWindow2('display.html')">Open Display Page</button>
+  </div>
+
+  <div class="link-container">
+    <p>Game Over: Buzzer</p>
+    <button onclick="playBuzzer()">GameOver</button>
   </div>
 
   <script>
     // Function to open pages in a new tab
-    function openInNewTab(url) {
-      window.open(url, '_blank');
-    }
+    // function openInNewTab(url) {
+    //   window.open(url, '_blank');
+      
+    // }
+
+    // Function to open the first window
+function openWindow1(url) {
+  window.open(
+    url, 
+    'blank', // Unique name for the window
+    'width=800,height=600,top=100,left=100,scrollbars=yes,resizable=yes'
+  );
+}
+
+// Function to open the second window
+function openWindow2(url) {
+  window.open(
+    url, // URL for the second window
+    'Window2', // Unique name for the window
+    'width=1024,height=768,top=150,left=150,scrollbars=yes,resizable=yes'
+  );
+}
+
+// Function to open the second window
+function openWindow3(url) {
+  window.open(
+    url, // URL for the second window
+    'Window3', // Unique name for the window
+    'width=1024,height=768,top=150,left=150,scrollbars=yes,resizable=yes'
+  );
+}
+
+// Countdown function
+
   </script>
 </body>
 </html>

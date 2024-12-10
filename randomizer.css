@@ -1,0 +1,66 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  h1, h2 {
+    margin: 20px 0;
+  }
+  
+  /* Management Controls */
+  .player-management,
+  .category-management {
+    margin-bottom: 20px;
+  }
+  
+  .player-management input,
+  .category-management input {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+  }
+  
+  .player-management button,
+  .category-management button {
+    padding: 10px 15px;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  /* Randomizer Containers */
+  .randomizer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  /* Shared Box Styles */
+  .player-box,
+  .category-box {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .player-box.highlight,
+  .category-box.highlight {
+    background-color: yellow;
+    transform: scale(1.2);
+  }
+  
+  

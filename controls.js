@@ -239,6 +239,13 @@ function triggerReset() {
   channel.postMessage({ action: "resetDisplay" }); // Send reset message
 }
 
+function playBuzzer() {
+
+  const audio = new Audio('./sounds/buzzer.mp3');
+  audio.play();
+}
+
+
 
 
 

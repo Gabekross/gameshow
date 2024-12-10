@@ -26,8 +26,7 @@ main {
   display: flex;
   justify-content: center;
   gap: 2px; /* Space between timers */
-  border: solid 10px rgba(108, 236, 28, 0.2);
-  border-radius: 15px;
+  border: solid 10px rgba(160, 194, 224, 0.952);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
   align-items: center; /* Aligns the timers vertically */
   width: 100%;
@@ -45,20 +44,20 @@ img {
   width: 1000px;
   height: 520px;
   object-fit: cover;
-  border: solid 10px rgba(108, 236, 28, 0.2);
+  border: solid 10px rgba(160, 194, 224, 0.32);
   border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+  box-shadow: 10px 5px 5px rgba(236, 28, 52, 0.18);
 
 }
 .timer1 {
   border-radius: 0px;
-  border-right: solid 5px rgba(245, 245, 245, 0.874);
+  border-right: solid 5px rgba(160, 194, 224, 0.952);
   width: 100%;
   text-align: center;
   
 }
 .timer2 {
-  border-left: solid 5px rgba(245, 245, 245, 0.874);
+  border-left: solid 5px rgba(160, 194, 224, 0.952);
   border-radius: 0px;
   width: 100%;
   text-align: center;
@@ -81,13 +80,13 @@ img {
   margin-top: 30px;
   padding: 5px;
   width: 60%;
-  border: solid 5px rgba(108, 236, 28, 0.2);
   border-radius: 2px;
   text-align: center;
-  background-color: rgba(108, 236, 28, 0.4);
-  border: solid 10px rgba(108, 236, 28, 0.2);
+  background-color: rgba(108, 236, 28, 0.3);
+  border: solid 10px rgba(160, 194, 224, 0.32);
   border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+  box-shadow: 10px 4px 6px rgba(236, 28, 52, 0.18);;
+  
 
 }
 
@@ -101,8 +100,8 @@ img {
   padding: 1px;
   width: 50%;
   text-align: center;
-  font-size: 400px;
-  color: rgba(238, 39, 55, 0.874);
+  font-size: 650px;
+  color: rgba(238, 192, 39, 0.5);
   font-family: 'Times New Roman';
  
 }
@@ -119,16 +118,27 @@ img {
     transform: scale(1);
   }
 }
+@keyframes fadeIn {
+  from { opacity: -1; }
+  to { opacity: 1; }
+  
+}
 
 /* Style for the animated image */
 .animated-image {
   display: block;
-  width: 20%;
-  height: 20%;
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50% ;
+  width: 90%; /* or whatever width you want */
   text-align: center;
-  font-size: 50px;
+  font-size: 100px;
   color: rgba(168, 238, 39, 0.874);
   animation: pulse 2s infinite;
+  border-radius: 50%;
+  border: 1px;
+
 }
 
 /* Hidden state for the image */

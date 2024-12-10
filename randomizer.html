@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player Randomizer</title>
+  <link rel="stylesheet" href="randomizer.css">
+</head>
+<body>
+  <h1>Player Randomizer</h1>
+
+  <!-- Form to manage players -->
+  <div class="player-management">
+    <input type="text" id="newPlayerName" placeholder="Enter player name">
+    <button onclick="addPlayer()">Add Player</button>
+    <button onclick="removePlayer()">Remove Last Player</button>
+  </div>
+
+  <!-- Randomizer Boxes -->
+  <div id="randomizerContainer" class="randomizer-container"></div>
+  <br>
+  <hr>
+
+  <!-- Controls -->
+  <button id="startRandomizer" onclick="startPlayerRandomizer()">Start Randomizer</button>
+
+  <h2>Category Randomizer</h2>
+  <div class="category-management">
+    <input type="text" id="newCategoryName" placeholder="Enter category name">
+    <button onclick="addCategory()">Add Category</button>
+    <button onclick="removeCategory()">Remove Last Category</button>
+  </div>
+  <div id="categoryContainer" class="randomizer-container"></div>
+  <br>
+  <hr>
+  <button id="startCategoryRandomizer" onclick="startCategoryRandomizer()">Start Category Randomizer</button>
+
+  <!-- Sound Effects -->
+  <audio id="tickSound" src="tick.mp3" preload="auto"></audio>
+  <audio id="celebrationSound" src="celebration.mp3" preload="auto"></audio>
+
+  <script src="randomizer.js"></script>
+</body>
+</html>
