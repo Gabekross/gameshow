@@ -6,9 +6,38 @@ let currentImage = null;
 let currentAnswer = null;
 
 
+const modal = document.getElementById("modal");
+const closeModal = document.getElementById("closeModal");
+
+const player1Img = document.getElementById("player1Img");
+const player1Name = document.getElementById("player1Name");
+
+const player2Img = document.getElementById("player2Img");
+const player2Name = document.getElementById("player2Name");
+
+
 // Listen for updates from the controls page
 channel.onmessage = (event) => {
-  const { timerId, value, action, imageSrc ,answer} = event.data;
+  const { timerId, value, action, imageSrc ,answer,player1,player2, closeModal} = event.data;
+
+  if (action === "showPlayerVs") {
+    player1Img.src = player1.img;
+    player1Name.textContent = player1.name;
+
+    player2Img.src = player2.img;
+    player2Name.textContent = player2.name;
+
+    modal.style.display = "flex";
+  }
+
+  if (action === "closeModal") {
+    modal.style.display = "none"; // Close the modal
+    console.log("Modal closed due to countdown start.");
+  }
+
+  if (action === "resetApp") {
+    location.reload(); // Refresh display.html
+  }
 
   // Update the timer display
   if (action === "update") {
@@ -85,6 +114,21 @@ channel.onmessage = (event) => {
     console.log("Countdown complete.");
   }
 };
+
+
+// Close modal
+closeModal.onclick = () => {
+  modal.style.display = "none";
+};
+
+// Close modal by clicking outside
+window.onclick = (event) => {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+};
+
+
 
 
 

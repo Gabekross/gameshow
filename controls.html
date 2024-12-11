@@ -47,9 +47,22 @@
       <option value="category8">Category 8</option>
     </select>
     <button onclick="playBuzzer()">GameOver</button>
-    <script src="controls.js"></script>
-
   </div>
+  <div class="controls">
+    <div >
+      <h1>Prelims</h1>
+      <label for="player1Select">Select Player 1:</label>
+      <select id="player1Select"></select>
+    </div>
+    <div>
+      <label for="player2Select">Select Player 2:</label>
+      <select id="player2Select"></select>
+    </div>
+    <button onclick="triggerPlayerVsModal()">Show Player vs Player</button>
+  </div>
+  <button onclick="resetApp()">Reset App</button>
+
+
   <script src="controls.js"></script>
 
 </body>

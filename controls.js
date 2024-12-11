@@ -7,6 +7,54 @@ let currentIndex = 0; // Counter to track the current image index
 let imagesAndAnswers = []; // Array to hold images and answers
 let allowShowAnswerWhileRunning = [false, false]; // Tracks if "Turn Red" is active for each timer
 
+const audioS = new Audio('./sounds/preview.mp3');
+audioS .load();
+
+const players = [
+  { name: "Taiwo", img: "./images/christmasimage.jpg" },
+  { name: "Shalom", img: "./images/gameimage.JPG" },
+  { name: "John", img: "./images/santa7.jpg" },
+  { name: "Kenny", img: "./images/player4.jpg" },
+  { name: "Ore", img: "./images/player4.jpg" },
+  { name: "Grace", img: "./images/player4.jpg" },
+  { name: "Temi", img: "./images/player4.jpg" },
+  { name: "Wildcard", img: "./images/santa7.jpg" },
+];
+
+
+// Populate dropdowns
+const player1Select = document.getElementById("player1Select");
+const player2Select = document.getElementById("player2Select");
+
+players.forEach((player, index) => {
+  const option1 = document.createElement("option");
+  option1.value = index;
+  option1.textContent = player.name;
+
+  const option2 = option1.cloneNode(true);
+
+  player1Select.appendChild(option1);
+  player2Select.appendChild(option2);
+});
+
+function triggerPlayerVsModal() {
+  const player1Index = player1Select.value;
+  const player2Index = player2Select.value;
+
+  if (player1Index === player2Index) {
+    alert("Please select different players.");
+    return;
+  }
+
+  const player1 = players[player1Index];
+  const player2 = players[player2Index];
+
+  channel.postMessage({
+    action: "showPlayerVs",
+    player1,
+    player2,
+  });
+}
 
 // Fetch the JSON data
 async function fetchImagesAndAnswers() {
@@ -23,7 +71,7 @@ async function loadCategory(categoryName) {
     const response = await fetch('imagesAndAnswers.json'); // Fetch the single JSON file
     const data = await response.json();
     imagesAndAnswers = data[categoryName]; // Extract the specific category
-    console.log(`Loaded category: ${categoryName}`, imagesAndAnswers);
+    
     currentIndex = 0; // Reset index when category changes
   } catch (error) {
     console.error(`Error loading category ${categoryName}:`, error);
@@ -68,6 +116,16 @@ function updateDisplay(timerId) {
 //   // Show a image when the timer starts
 //   showSequentialImage();
 // }
+
+function resetApp() {
+  console.log("Resetting the app to its default state...");
+  
+  // Send reset action to display.html
+  channel.postMessage({ action: "resetApp" });
+
+  location.reload(); // Refresh controls.html
+}
+
 
 function startTimer(timerId) {
   const otherTimerId = timerId === 1 ? 2 : 1;
@@ -204,15 +262,28 @@ function resetTimers() {
   console.log("Timers have been reset.");
 }
 
+function playSound(audio) {
+  audio.currentTime = 0; // Reset playback to the start
+  audio.play().catch((error) => {
+    console.error("Audio playback failed:", error);
+  });
+}
+
 // Countdown function
 function startCountdown() {
+
+ 
+  playSound(audioS);
+
+
+  channel.postMessage({ action: "closeModal" });
+
   let countdownValue = 3;
 
   // Notify display.html to show the initial countdown value
   channel.postMessage({ action: "updateCountdown", value: countdownValue });
 
-  const audio = new Audio('./sounds/preview.mp3');
-  audio.play();
+
 
   const interval = setInterval(() => {
     countdownValue--;
