@@ -77,14 +77,13 @@ img {
 }
 
 .answer-box {
-  margin-top: 30px;
+  margin-top: 25px;
   padding: 5px;
   width: 60%;
-  border-radius: 2px;
   text-align: center;
   background-color: rgba(108, 236, 28, 0.3);
   border: solid 10px rgba(160, 194, 224, 0.32);
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 10px 4px 6px rgba(236, 28, 52, 0.18);;
   
 
@@ -92,7 +91,7 @@ img {
 
 .answer-box p {
   margin: 0;
-  font-size: 90px;
+  font-size: 78px;
   color: rgba(245, 245, 245, 0.874);
 }
 

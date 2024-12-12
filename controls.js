@@ -11,13 +11,13 @@ const audioS = new Audio('./sounds/preview.mp3');
 audioS .load();
 
 const players = [
-  { name: "Taiwo", img: "./images/christmasimage.jpg" },
-  { name: "Shalom", img: "./images/gameimage.JPG" },
+  { name: "Taiwo", img: "./images/Taiwo.jpg" },
+  { name: "Shalom", img: "./images/shalom.JPG" },
   { name: "John", img: "./images/santa7.jpg" },
-  { name: "Kenny", img: "./images/player4.jpg" },
-  { name: "Ore", img: "./images/player4.jpg" },
-  { name: "Grace", img: "./images/player4.jpg" },
-  { name: "Temi", img: "./images/player4.jpg" },
+  { name: "Kenny", img: "./images/santa7.jpg" },
+  { name: "Oreoluwa", img: "./images/oreoluwa.jpg" },
+  { name: "Grace", img: "./images/santa7.jpg" },
+  { name: "Temi", img: "./images/santa7.jpg" },
   { name: "Wildcard", img: "./images/santa7.jpg" },
 ];
 
@@ -55,7 +55,6 @@ function triggerPlayerVsModal() {
     player2,
   });
 }
-
 // Fetch the JSON data
 async function fetchImagesAndAnswers() {
   try {
@@ -79,7 +78,6 @@ async function loadCategory(categoryName) {
 }
 
 // Call the fetch function on load
-
 loadCategory();
 
 function changeCategory(categoryName) {
@@ -94,29 +92,6 @@ function updateDisplay(timerId) {
   channel.postMessage({ timerId, value: timers[timerId - 1], action: "update" });
 }
 
-
-// function startTimer(timerId) {
-//   const otherTimerId = timerId === 1 ? 2 : 1;
-
-//   // Pause the other timer if it's running
-//   pauseTimer(otherTimerId);
-
-//   if (!intervals[timerId - 1]) {
-//     intervals[timerId - 1] = setInterval(() => {
-//       if (timers[timerId - 1] > 0) {
-//         timers[timerId - 1]--;
-//         updateDisplay(timerId);
-//       } else {
-//         clearInterval(intervals[timerId - 1]);
-//         intervals[timerId - 1] = null;
-//       }
-//     }, 1000);
-//   }
-
-//   // Show a image when the timer starts
-//   showSequentialImage();
-// }
-
 function resetApp() {
   console.log("Resetting the app to its default state...");
   
@@ -126,21 +101,26 @@ function resetApp() {
   location.reload(); // Refresh controls.html
 }
 
-
 function startTimer(timerId) {
   const otherTimerId = timerId === 1 ? 2 : 1;
 
   // Pause the other timer if it's running
-  pauseTimer(otherTimerId);
+pauseTimer(otherTimerId);
 
   if (!intervals[timerId - 1]) {
     intervals[timerId - 1] = setInterval(() => {
       if (timers[timerId - 1] > 0) {
         timers[timerId - 1]--;
         updateDisplay(timerId);
+         // Trigger flashing effect when timer reaches 5
+        if (timers[timerId - 1] === 5) {
+          channel.postMessage({ action: "flashTimer", timerId, start: true });
+      }
       } else {
         clearInterval(intervals[timerId - 1]);
         intervals[timerId - 1] = null;
+
+        channel.postMessage({ action: "flashTimer", timerId, start: false });
       }
     }, 1000);
   }
@@ -153,17 +133,13 @@ function startTimer(timerId) {
     const answerBox = document.getElementById(answerBoxId);
   
       // Update the answer box in controls.html
-     answerBox.textContent = `Answer: ${currentImage.answer}`;
-      console.log(`Answer for Timer ${timerId}: ${currentImage.answer}`);
+     answerBox.textContent = `Answer: ${currentImage.answer.toUpperCase()}`;
   } else {
       console.warn("No images available to display.");
   }
   // Show the current image and answer
   showSequentialImage();
   },1000);
-
-
-
 }
 
 // Function to pause a timer
@@ -185,7 +161,7 @@ function showSequentialImage() {
   channel.postMessage({
     action: "showImage",
     imageSrc: currentImage.src,
-    answer: currentImage.answer // Pass the answer for tracking
+    answer: currentImage.answer.toUpperCase(), // Pass the answer for tracking
   });
 
   console.log(`Displaying image: ${currentImage.src}`);

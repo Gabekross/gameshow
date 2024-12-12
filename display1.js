@@ -5,6 +5,8 @@ const channel = new BroadcastChannel('timer_channel');
 let currentImage = null;
 let currentAnswer = null;
 
+let flashIntervals = {}; // Store flash intervals for timers
+
 
 const modal = document.getElementById("modal");
 const closeModal = document.getElementById("closeModal");
@@ -18,7 +20,7 @@ const player2Name = document.getElementById("player2Name");
 
 // Listen for updates from the controls page
 channel.onmessage = (event) => {
-  const { timerId, value, action, imageSrc ,answer,player1,player2, closeModal} = event.data;
+  const { timerId, value, action, imageSrc ,answer,player1,player2, start, closeModal} = event.data;
 
   if (action === "showPlayerVs") {
     player1Img.src = player1.img;
@@ -43,6 +45,14 @@ channel.onmessage = (event) => {
   if (action === "update") {
     const displayElement = document.getElementById(`display${timerId}`);
     displayElement.textContent = value;
+  }
+
+  if (action === "flashTimer") {
+    if (start) {
+      startFlashingTimer(timerId);
+    } else {
+      stopFlashingTimer(timerId);
+    }
   }
 
   if (action === "showImage") {
@@ -115,7 +125,26 @@ channel.onmessage = (event) => {
   }
 };
 
+// Function to start flashing a timer
+function startFlashingTimer(timerId) {
+  const timerElement = document.getElementById(`display${timerId}`);
+  let isRed = false;
 
+  // Start the flashing effect
+  flashIntervals[timerId] = setInterval(() => {
+    timerElement.style.background = isRed  ? "linear-gradient(45deg, #ffffff, #cccccc)" 
+    : "linear-gradient(45deg, #ff0000, #ff6666)";
+    isRed = !isRed;
+  }, 500); // Toggle every 500ms
+}
+
+// Function to stop flashing a timer
+function stopFlashingTimer(timerId) {
+  clearInterval(flashIntervals[timerId]); // Stop the flashing effect
+  delete flashIntervals[timerId]; // Remove from intervals tracker
+  const timerElement = document.getElementById(`display${timerId}`);
+  timerElement.style.background = ""; // Reset background color
+}
 // Close modal
 closeModal.onclick = () => {
   modal.style.display = "none";
