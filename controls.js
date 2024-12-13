@@ -17,8 +17,8 @@ const players = [
   { name: "Kenny", img: "./images/santa7.jpg" },
   { name: "Oreoluwa", img: "./images/oreoluwa.jpg" },
   { name: "Grace", img: "./images/santa7.jpg" },
-  { name: "Temi", img: "./images/santa7.jpg" },
-  { name: "Wildcard", img: "./images/santa7.jpg" },
+  { name: "Jed", img: "./images/Jed.jpg" },
+  { name: "Tishe", img: "./images/Tishe.jpg" },
 ];
 
 
