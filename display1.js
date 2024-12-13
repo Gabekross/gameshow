@@ -97,11 +97,11 @@ channel.onmessage = (event) => {
     const timerElement = document.getElementById(`display${timerId}`);
     const imageElement = document.getElementById("randomImage");
 
-    // Change the timer's background color to red
-    timerElement.style.backgroundColor = "red";
+    // Change the timer's font color to red
+    timerElement.style.color = "red";
     // Reset the color after 3 seconds
     setTimeout(() => {
-      timerElement.style.backgroundColor = ""; // Reset to default
+      timerElement.style.color = ""; // Reset to default
 
     }, 3000);
 
@@ -132,10 +132,10 @@ function startFlashingTimer(timerId) {
 
   // Start the flashing effect
   flashIntervals[timerId] = setInterval(() => {
-    timerElement.style.background = isRed  ? "linear-gradient(45deg, #ffffff, #cccccc)" 
-    : "linear-gradient(45deg, #ff0000, #ff6666)";
+    timerElement.style.color = isRed  ? "red" 
+    : "brown";
     isRed = !isRed;
-  }, 500); // Toggle every 500ms
+  }, 250); // Toggle every 500ms
 }
 
 // Function to stop flashing a timer
@@ -143,7 +143,7 @@ function stopFlashingTimer(timerId) {
   clearInterval(flashIntervals[timerId]); // Stop the flashing effect
   delete flashIntervals[timerId]; // Remove from intervals tracker
   const timerElement = document.getElementById(`display${timerId}`);
-  timerElement.style.background = ""; // Reset background color
+  timerElement.style.color = " "; // Reset font color
 }
 // Close modal
 closeModal.onclick = () => {
