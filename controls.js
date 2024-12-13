@@ -65,17 +65,49 @@ async function fetchImagesAndAnswers() {
     console.error('Error loading images and answers:', error);
   }
 }
+
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+// async function loadCategory(categoryName) {
+//   try {
+//     const response = await fetch('imagesAndAnswers.json'); // Fetch the single JSON file
+//     const data = await response.json();
+//     imagesAndAnswers = data[categoryName]; // Extract the specific category
+    
+//     currentIndex = 0; // Reset index when category changes
+//   } catch (error) {
+//     console.error(`Error loading category ${categoryName}:`, error);
+//   }
+// }
+
 async function loadCategory(categoryName) {
   try {
-    const response = await fetch('imagesAndAnswers.json'); // Fetch the single JSON file
+    const response = await fetch('imagesAndAnswers.json'); // Fetch the JSON data
     const data = await response.json();
-    imagesAndAnswers = data[categoryName]; // Extract the specific category
-    
-    currentIndex = 0; // Reset index when category changes
+    const category = data[categoryName]; // Extract the specific category
+
+    if (category) {
+      imagesAndAnswers = shuffleArray([...category]); // Shuffle and store the category contents
+      console.log(`Loaded and shuffled category: ${categoryName}`, imagesAndAnswers);
+
+      currentIndex = 0; // Reset index when category changes
+    } else {
+      console.error(`Category ${categoryName} not found.`);
+      imagesAndAnswers = []; // Clear imagesAndAnswers if category is invalid
+    }
   } catch (error) {
     console.error(`Error loading category ${categoryName}:`, error);
+    imagesAndAnswers = []; // Clear imagesAndAnswers in case of error
   }
 }
+
 
 // Call the fetch function on load
 loadCategory();
@@ -292,6 +324,32 @@ function playBuzzer() {
   audio.play();
 }
 
+
+
+
+const audioGame = new Audio('./sounds/gameMusic.mp3');
+function playSound() {
+      audioGame.volume = 0.5; // Set volume to 50%
+      audioGame.play();
+}
+function stopSound() {
+      audioGame.pause();
+      audioGame.currentTime = 0;
+}
+
+// Function to adjust the volume
+function setVolume(level) {
+  if (level >= 0 && level <= 1) {
+    audioGame.volume = level;
+    console.log(`Volume set to ${level * 100}%`);
+  } else {
+    console.error("Volume level must be between 0.0 and 1.0");
+  }
+}
+// function setVolume(level) {
+//   audio.volume = parseFloat(level); // Ensure the level is a number
+//   console.log(`Volume set to ${audio.volume * 100}%`);
+// }
 
 
 

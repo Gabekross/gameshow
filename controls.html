@@ -47,6 +47,7 @@
       <option value="category8">Gen Z Slangs</option>
     </select>
     <button onclick="playBuzzer()">GameOver</button>
+
   </div>
   <div class="controls">
     <div >
@@ -61,9 +62,22 @@
     <button onclick="triggerPlayerVsModal()">Show Player vs Player</button>
   </div>
   <button onclick="resetApp()">Reset App</button>
+  <button onclick="playSound('sound1')">GameStartMusic</button>
+  <button onclick="stopSound('sound1')">stopgameMusic</button>
+  <label for="volumeControl">Volume:</label>
+  <input
+    id="volumeControl"
+    type="range"
+    min="0"
+    max="1"
+    step="0.1"
+    value="0.5"
+    onchange="setVolume(this.value)"
+  />
 
-
-  <script src="controls.js"></script>
+  <audio id="sound1" src="./sounds/gameMusic.mp3"></audio>
+  <script src="controls.js">
+  </script>
 
 </body>
 </html>
