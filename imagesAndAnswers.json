@@ -210,7 +210,6 @@
 
   ],
   "category7":[
-    { "src": "./images/alligator.jpg", "answer": "Alligator" },
     { "src": "./images/bear.jpg", "answer": "Bear" },
     { "src": "./images/bison.JPG", "answer": "Bison " },
     { "src": "./images/Sealion.JPG", "answer": "Seal lion " },
@@ -219,7 +218,6 @@
     { "src": "./images/camel.jpg", "answer": "Camel " },
     { "src": "./images/centipede.JPG", "answer": "Centipede " },
     { "src": "./images/cheetah.jpg", "answer": "Cheetah " },
-    { "src": "./images/chimpazee.jpg", "answer": "Chimpazee " },
     { "src": "./images/cow.jpg", "answer": "Cow " },
     { "src": "./images/animals/Gecko.JPG", "answer": "Gecko " },
     { "src": "./images/animals/Deer.jpg", "answer": "Deer " },
