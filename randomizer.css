@@ -25,9 +25,9 @@ body {
   h1 {
     font-family: sans-serif;
     font-size: 36px;
-    color:antiquewhite;
-    border-color: rgba(238, 192, 39, 0.5);
-    text-decoration-color: antiquewhite;
+    color: rgba(238, 192, 39, 0.9);
+    text-shadow: rgb(255, 0, 38,0.6) 1px 0 10px;
+   
   }
   
   /* Management Controls */
@@ -57,6 +57,7 @@ body {
     border-radius: 8px;
     font-weight: bold;
     color: rgb(255, 242, 205);
+    text-shadow:  rgba(238, 192, 39, 0.6) 1px 0 5px;
     transition: background-color 0.3s, transform 0.3s;
     font-size: calc(1rem + 1vw);
     font-size: 25px;

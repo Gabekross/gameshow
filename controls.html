@@ -12,7 +12,7 @@
   <div class="controls">
     <h2>Player 1</h2>
     <button onclick="startTimer(1)">Start Player 1</button>
-    <button onclick="pauseTimer(1)">Pause Player 1</button>
+    <!-- <button onclick="pauseTimer(1)">Pause Player 1</button> -->
     <button onclick="showAnswer(1)">Show Answer</button> <!-- New Button -->
     <button onclick="turnRed(1)">Turn Red (PASS)</button>
     <div id="player1Answer" class="answer-box">Answer: Hidden</div> <!-- Answer for Player 1 -->
@@ -20,7 +20,7 @@
   <div class="controls">
     <h2>Player 2</h2>
     <button onclick="startTimer(2)">Start Player 2</button>
-    <button onclick="pauseTimer(2)">Pause Player 2</button>
+    <!-- <button onclick="pauseTimer(2)">Pause Player 2</button> -->
     <button onclick="showAnswer(2)">Show Answer</button> <!-- New Button -->
     <button onclick="turnRed(2)">Turn Red (PASS)</button>
     <div id="player2Answer" class="answer-box">Answer: Hidden</div> <!-- Answer for Player 2 -->
@@ -28,20 +28,20 @@
   <div class="controls">
     <h2>Actions</h2>
     <!-- <button onclick="triggerReset()">Reset Display</button> New Reset Button -->
-    <button onclick="triggerCountdown()">Start Game:3s Countdown</button> <!-- New Countdown Button -->
+    <button onclick="triggerCountdown()">START GAME(3S COUNTDOWN)</button> <!-- New Countdown Button -->
     <button onclick="resetTimers()">Reset Timers</button>
     <select class ="categoryContainer" id="categorySelect" onchange="changeCategory(this.value)">
-      <option value="category1">Test</option>
+      <option value="category1">Empty</option>
       <option value="category2">Logos</option>
       <option value="category3">Common Items</option>
       <option value="category4">Compound Words</option>
       <option value="category5">Food</option>
       <option value="category6">Flag and Places</option>
       <option value="category7">Living things</option>
-      <option value="category8">Gen Z Slangs</option>
-      <option value="category9">Test</option>
+      <option value="category8">Gen Z ABBRV</option>
+      <option value="category9">Bible Verse (Test)</option>
     </select>
-    <button onclick="playBuzzer()">GameOver</button>
+    <button onclick="playBuzzer()">GameOver BUZZER</button>
   </div>
   <div class="controls">
     <div >
@@ -55,9 +55,9 @@
     </div>
     <button onclick="triggerPlayerVsModal()">Show Player vs Player</button>
   </div>
-  <button onclick="resetApp()">Reset App</button>
+  <button onclick="resetApp()">RESET APP</button>
   <button onclick="playSound('sound1')">GameStartMusic</button>
-  <button onclick="stopSound('sound1')">stopgameMusic</button>
+  <button onclick="stopSound('sound1')">stop</button>
   <label for="volumeControl">Volume:</label>
   <input
     id="volumeControl"
@@ -68,9 +68,7 @@
     value="0.5"
     onchange="setVolume(this.value)"
   />
-
   </section>
-  
   <section>
     <!-- Player Management -->
   <div class="player-management">

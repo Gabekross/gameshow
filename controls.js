@@ -1,8 +1,6 @@
 // BroadcastChannel for communication
 const channel = new BroadcastChannel('timer_channel');
 
-// BroadcastChannel for communication
-// const channel = new BroadcastChannel('randomizer_channel');
 let playersA = [];
 let categories = [];
 
@@ -19,7 +17,7 @@ const players = [
   { name: "Kenny", img: "./images/kenny.jpg" },
   { name: "Oreoluwa", img: "./images/oreoluwa.jpg" },
   { name: "Grace", img: "./images/Grace.jpg" },
-  { name: "Jed", img: "./images/Jed.jpg" },
+  { name: "Jed", img: "./images/jed.jpg" },
   { name: "Tishe", img: "./images/Tishe.jpg" },
 ];
 
@@ -135,18 +133,6 @@ function shuffleArray(array) {
   }
   return array;
 }
-
-// async function loadCategory(categoryName) {
-//   try {
-//     const response = await fetch('imagesAndAnswers.json'); // Fetch the single JSON file
-//     const data = await response.json();
-//     imagesAndAnswers = data[categoryName]; // Extract the specific category
-    
-//     currentIndex = 0; // Reset index when category changes
-//   } catch (error) {
-//     console.error(`Error loading category ${categoryName}:`, error);
-//   }
-// }
 
 async function loadCategory(categoryName) {
   try {
