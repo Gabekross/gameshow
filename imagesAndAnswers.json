@@ -203,7 +203,12 @@
     { "src": "./images/flags_places/usa.JPG", "answer": "USA" },
     { "src": "./images/flags_places/whitehouse.JPG", "answer": "Whitehouse" },
     { "src": "./images/flags_places/phonebooth.JPG", "answer": "Phonebooth" },
+    { "src": "./images/flags_places/aqua.JPG", "answer": "Aquarium" },
+    { "src": "./images/flags_places/beach.JPG", "answer": "Beach" },
+    { "src": "./images/flags_places/range.JPG", "answer": "Range" },
     { "src": "./images/flags_places/nigeriaone.JPG", "answer": "Nigeria" },
+    { "src": "./images/flags_places/well.JPG", "answer": "Well" },
+    { "src": "./images/flags_places/ahangar.JPG", "answer": "Aircraft hangar" },
     { "src": "./images/flags_places/buckingpalace.JPG", "answer": "Buckingham Palace" }
 
   ],
