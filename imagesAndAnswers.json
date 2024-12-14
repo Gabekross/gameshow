@@ -210,7 +210,7 @@
 
   ],
   "category7":[
-    { "src": "./images/alligator.jpg", "answer": "Alligator" },
+    { "src": "./images/Alligator.jpg", "answer": "Alligator" },
     { "src": "./images/bear.jpg", "answer": "Bear" },
     { "src": "./images/bison.JPG", "answer": "Bison " },
     { "src": "./images/Sealion.JPG", "answer": "Seal lion " },
@@ -219,7 +219,6 @@
     { "src": "./images/camel.jpg", "answer": "Camel " },
     { "src": "./images/centipede.JPG", "answer": "Centipede " },
     { "src": "./images/cheetah.jpg", "answer": "Cheetah " },
-    { "src": "./images/Chimpazee.jpg", "answer": "Chimpazee " },
     { "src": "./images/cow.jpg", "answer": "Cow " },
     { "src": "./images/animals/Gecko.JPG", "answer": "Gecko " },
     { "src": "./images/animals/Deer.jpg", "answer": "Deer " },
@@ -275,9 +274,9 @@
     { "src": "./images/GenzSlangs/idontknow.JPG", "answer": "I don't know" },
     { "src": "./images/GenzSlangs/ifyouknowyouknow.JPG", "answer": "if you know you know" },
     { "src": "./images/GenzSlangs/ijustgotback.JPG", "answer": "i just got back" },
-    { "src": "./images/GenzSlangs/iknowright.JPG", "answer": "i know right" },
+    { "src": "./images/GenzSlangs/Iknowright.JPG", "answer": "i know right" },
     { "src": "./images/GenzSlangs/name.JPG", "answer": "in JESUS name" },
-    { "src": "./images/GenzSlangs/inmyopinion.JPG", "answer": "in my opinion" },
+    { "src": "./images/GenzSlangs/Inmyopinion.JPG", "answer": "in my opinion" },
     { "src": "./images/GenzSlangs/justkidding.JPG", "answer": "just kidding" },
     { "src": "./images/GenzSlangs/KingJamesVersion.JPG", "answer": "King james version" },
     { "src": "./images/GenzSlangs/letmeknow.JPG", "answer": "let me know" },
