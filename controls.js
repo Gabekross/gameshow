@@ -1,19 +1,21 @@
 // BroadcastChannel for communication
 const channel = new BroadcastChannel('timer_channel');
 
+// BroadcastChannel for communication
+// const channel = new BroadcastChannel('randomizer_channel');
+let playersA = [];
+let categories = [];
+
 let intervals = [null, null];
 let timers = [30, 30];
 let currentIndex = 0; // Counter to track the current image index
 let imagesAndAnswers = []; // Array to hold images and answers
 let allowShowAnswerWhileRunning = [false, false]; // Tracks if "Turn Red" is active for each timer
 
-const audioS = new Audio('./sounds/preview.mp3');
-audioS .load();
-
 const players = [
   { name: "Taiwo", img: "./images/Taiwo.jpg" },
   { name: "Shalom", img: "./images/shalom.JPG" },
-  { name: "John", img: "./images/santa7.jpg" },
+  { name: "John", img: "./images/john.jpg" },
   { name: "Kenny", img: "./images/kenny.jpg" },
   { name: "Oreoluwa", img: "./images/oreoluwa.jpg" },
   { name: "Grace", img: "./images/Grace.jpg" },
@@ -36,6 +38,65 @@ players.forEach((player, index) => {
   player1Select.appendChild(option1);
   player2Select.appendChild(option2);
 });
+
+
+// Add/Remove Players
+function addPlayer() {
+  const newPlayerInput = document.getElementById("newPlayerName");
+  const newPlayerName = newPlayerInput.value.trim().toUpperCase();
+
+  if (newPlayerName) {
+    playersA.push(newPlayerName);
+    newPlayerInput.value = "";
+    channel.postMessage({ action: 'updatePlayers', data: playersA });
+  } else {
+    alert("Please enter a valid player name.");
+  }
+}
+
+function removePlayer() {
+  if (playersA.length > 0) {
+    playersA.pop();
+    channel.postMessage({ action: 'updatePlayers', data: playersA });
+  } else {
+    alert("No players left to remove.");
+  }
+}
+
+// Add/Remove Categories
+function addCategory() {
+  const newCategoryInput = document.getElementById("newCategoryName");
+  const newCategoryName = newCategoryInput.value.trim().toUpperCase();
+
+  if (newCategoryName) {
+    categories.push(newCategoryName);
+    newCategoryInput.value = "";
+    channel.postMessage({ action: 'updateCategories', data: categories });
+  } else {
+    alert("Please enter a valid category name.");
+  }
+}
+
+function removeCategory() {
+  if (categories.length > 0) {
+    categories.pop();
+    channel.postMessage({ action: 'updateCategories', data: categories });
+  } else {
+    alert("No categories left to remove.");
+  }
+}
+
+// Function to start player randomization
+function startPlayerRandomizer() {
+  channel.postMessage({ action: 'startPlayerRandomizer' });
+  console.log("Player Randomizer started from controls.");
+}
+
+// Function to start category randomization
+function startCategoryRandomizer() {
+  channel.postMessage({ action: 'startCategoryRandomizer' });
+  console.log("Category Randomizer started from controls.");
+}
 
 function triggerPlayerVsModal() {
   const player1Index = player1Select.value;
@@ -279,29 +340,19 @@ function playSound(audio) {
 
 // Countdown function
 function startCountdown() {
-
- 
-  playSound(audioS);
-
-
+  const audioS = new Audio('./sounds/preview.mp3');
+  audioS.play();
   channel.postMessage({ action: "closeModal" });
-
   let countdownValue = 3;
-
   // Notify display.html to show the initial countdown value
   channel.postMessage({ action: "updateCountdown", value: countdownValue });
-
-
-
   const interval = setInterval(() => {
     countdownValue--;
-
     if (countdownValue > 0) {
       // Send the updated countdown value
       channel.postMessage({ action: "updateCountdown", value: countdownValue });
     } else {
       clearInterval(interval);
-
       // Notify that the countdown is complete
       channel.postMessage({ action: "countdownComplete" });
     }
@@ -319,17 +370,13 @@ function triggerReset() {
 }
 
 function playBuzzer() {
-
   const audio = new Audio('./sounds/buzzer.mp3');
   audio.play();
 }
 
-
-
-
 const audioGame = new Audio('./sounds/gameMusic.mp3');
 function playSound() {
-      audioGame.volume = 0.5; // Set volume to 50%
+      audioGame.volume = 0.9; // Set volume to 50%
       audioGame.play();
 }
 function stopSound() {
@@ -346,10 +393,7 @@ function setVolume(level) {
     console.error("Volume level must be between 0.0 and 1.0");
   }
 }
-// function setVolume(level) {
-//   audio.volume = parseFloat(level); // Ensure the level is a number
-//   console.log(`Volume set to ${audio.volume * 100}%`);
-// }
+
 
 
 

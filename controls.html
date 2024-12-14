@@ -7,30 +7,24 @@
   <link rel="stylesheet" href="controls1.css">  
 </head>
 <body>
-  <h1>Timer Controls</h1>
-
+  <section>
+    <h1>Timer Controls</h1>
   <div class="controls">
     <h2>Player 1</h2>
     <button onclick="startTimer(1)">Start Player 1</button>
-    
     <button onclick="pauseTimer(1)">Pause Player 1</button>
     <button onclick="showAnswer(1)">Show Answer</button> <!-- New Button -->
     <button onclick="turnRed(1)">Turn Red (PASS)</button>
     <div id="player1Answer" class="answer-box">Answer: Hidden</div> <!-- Answer for Player 1 -->
-
   </div>
-
   <div class="controls">
     <h2>Player 2</h2>
     <button onclick="startTimer(2)">Start Player 2</button>
-
     <button onclick="pauseTimer(2)">Pause Player 2</button>
     <button onclick="showAnswer(2)">Show Answer</button> <!-- New Button -->
     <button onclick="turnRed(2)">Turn Red (PASS)</button>
     <div id="player2Answer" class="answer-box">Answer: Hidden</div> <!-- Answer for Player 2 -->
-    
   </div>
-
   <div class="controls">
     <h2>Actions</h2>
     <!-- <button onclick="triggerReset()">Reset Display</button> New Reset Button -->
@@ -48,7 +42,6 @@
       <option value="category9">Test</option>
     </select>
     <button onclick="playBuzzer()">GameOver</button>
-
   </div>
   <div class="controls">
     <div >
@@ -76,9 +69,29 @@
     onchange="setVolume(this.value)"
   />
 
+  </section>
   
-  <script src="controls.js">
-  </script>
+  <section>
+    <!-- Player Management -->
+  <div class="player-management">
+    <input type="text" id="newPlayerName" placeholder="Enter player name">
+    <button onclick="addPlayer()">Add Player</button>
+    <button onclick="removePlayer()">Remove Last Player</button>
+  </div>
 
+  <!-- Category Management -->
+  <div class="category-management">
+    <input type="text" id="newCategoryName" placeholder="Enter category name">
+    <button onclick="addCategory()">Add Category</button>
+    <button onclick="removeCategory()">Remove Last Category</button>
+  </div>
+
+  <!-- Randomizer Controls -->
+  <div class="randomizer-controls">
+    <button id="startRandomizer" onclick="startPlayerRandomizer()">Start Player Randomizer</button>
+    <button id="startCategoryRandomizer" onclick="startCategoryRandomizer()">Start Category Randomizer</button>
+  </div>
+  </section>
+  <script src="controls.js"></script>
 </body>
 </html>
