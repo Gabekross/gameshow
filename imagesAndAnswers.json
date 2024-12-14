@@ -131,7 +131,7 @@
     { "src": "./images/compoundwords/Tugboat.jpg", "answer": "Tugboat" },
     { "src": "./images/compoundwords/Watchdog.jpg", "answer": "Watchdog " },
     { "src": "./images/compoundwords/WristBand.jpg", "answer": "Wristband" },
-    { "src": "./images/compoundwords/scrambledeggs.JPG", "answer": "Scrambled Eggs" }
+    { "src": "./images/compoundwords/eggs.JPG", "answer": "Scrambled Eggs" }
   ],
 
   "category5":[
@@ -177,7 +177,7 @@
 
   ],
   "category6":[
-    { "src": "./images/flags_places/africa.JPG", "answer": "" },
+    { "src": "./images/flags_places/africa.JPG", "answer": "Africa" },
     { "src": "./images/flags_places/bowlingalley.JPG", "answer": "Bowling alley" },
     { "src": "./images/flags_places/dam.JPG", "answer": "Dam" },
     { "src": "./images/flags_places/disneyworld.JPG", "answer": "Disney World" },
@@ -186,11 +186,11 @@
     { "src": "./images/flags_places/Europe.JPG", "answer": "Europe" },
     { "src": "./images/flags_places/france.JPG", "answer": "France" },
     { "src": "./images/flags_places/Gambia.JPG", "answer": "Gambia" },
-    { "src": "./images/flags_places/Ghana.JPG", "answer": "Ghana" },
+    { "src": "./images/flags_places/ghana.JPG", "answer": "Ghana" },
     { "src": "./images/flags_places/grandcanyon.JPG", "answer": "Grand canyon" },
     { "src": "./images/flags_places/GreatwallofChina.JPG", "answer": "Great wall of China" },
     { "src": "./images/flags_places/hooverdam.JPG", "answer": "Hoover dam" },
-    { "src": "./images/flags_places/Italy.JPG", "answer": "Italy" },
+    { "src": "./images/flags_places/italy.JPG", "answer": "Italy" },
     { "src": "./images/flags_places/laboratory.JPG", "answer": "Laboratory" },
     { "src": "./images/flags_places/liberia.JPG", "answer": "Liberia" },
     { "src": "./images/flags_places/lincolnmemorial.JPG", "answer": "Lincoln Memorial" },
@@ -204,7 +204,7 @@
     { "src": "./images/flags_places/Southamerica.JPG", "answer": "South America" },
     { "src": "./images/flags_places/spaceneedle.JPG", "answer": "Space Needle" },
     { "src": "./images/flags_places/statdium.JPG", "answer": "Stadium" },
-    { "src": "./images/flags_places/statueofliberty.JPG", "answer": "Statue of Liberty" },
+    { "src": "./images/flags_places/Statueofliberty.JPG", "answer": "Statue of Liberty" },
     { "src": "./images/flags_places/swimmingpool.JPG", "answer": "Swimming pool" },
     { "src": "./images/flags_places/usa.JPG", "answer": "USA" },
     { "src": "./images/flags_places/whitehouse.JPG", "answer": "Whitehouse" },
@@ -257,6 +257,7 @@
     { "src": "./images/livingThings/Lizard.JPG", "answer": "Lizard " },
     { "src": "./images/livingThings/Racoon.JPG", "answer": "Racoon " },
     { "src": "./images/livingThings/Shark.JPG", "answer": "Shark " }
+
   ],
   "category8":[
     { "src": "./images/GenzSlangs/Assoonaspossible.JPG", "answer": "As Soon as Possible" },
@@ -278,7 +279,7 @@
     { "src": "./images/GenzSlangs/ifyouknowyouknow.JPG", "answer": "if you know you know" },
     { "src": "./images/GenzSlangs/ijustgotback.JPG", "answer": "i just got back" },
     { "src": "./images/GenzSlangs/iknowright.JPG", "answer": "i know right" },
-    { "src": "./images/GenzSlangs/inJesusname.JPG", "answer": "in JESUS name" },
+    { "src": "./images/GenzSlangs/name.JPG", "answer": "in JESUS name" },
     { "src": "./images/GenzSlangs/inmyopinion.JPG", "answer": "in my opinion" },
     { "src": "./images/GenzSlangs/justkidding.JPG", "answer": "just kidding" },
     { "src": "./images/GenzSlangs/KingJamesVersion.JPG", "answer": "King james version" },
@@ -286,7 +287,7 @@
     { "src": "./images/GenzSlangs/Mancrushmonday.JPG", "answer": "Man crush monday" },
     { "src": "./images/GenzSlangs/Nevermind.JPG", "answer": "never mind" },
     { "src": "./images/GenzSlangs/Noproblem.JPG", "answer": "no problem" },
-    { "src": "./images/GenzSlangs/Ofcourse.JPG", "answer": "of course" },
+    { "src": "./images/GenzSlangs/course.JPG", "answer": "of course" },
     { "src": "./images/GenzSlangs/onmyway.JPG", "answer": "on myway" },
     { "src": "./images/GenzSlangs/Outfitoftheweek.JPG", "answer": "Outfit of the week" },
     { "src": "./images/GenzSlangs/Outofoffice.JPG", "answer": "out of office" },
@@ -295,7 +296,7 @@
     { "src": "./images/GenzSlangs/Pointofview.JPG", "answer": "Point of view" },
     { "src": "./images/GenzSlangs/rightnow.JPG", "answer": "Right now" },
     { "src": "./images/GenzSlangs/Shakingmyhead.JPG", "answer": "shaking my head" },
-    { "src": "./images/GenzSlangs/something.JPG", "answer": "something" },
+    { "src": "./images/GenzSlangs/Something.JPG", "answer": "something" },
     { "src": "./images/GenzSlangs/Talktoyoulater.JPG", "answer": "talk to you later" },
     { "src": "./images/GenzSlangs/ThankGodisfriday.JPG", "answer": "Thank God is friday" },
     { "src": "./images/GenzSlangs/Throwbackthursday.JPG", "answer": "throwback thursday" },
@@ -306,6 +307,7 @@
     { "src": "./images/GenzSlangs/Whereyouat.JPG", "answer": "Where you at ?" },
     { "src": "./images/GenzSlangs/Womancrushwednesday.JPG", "answer": "woman crush wednesday" },
     { "src": "./images/GenzSlangs/Youonlyliveonce.JPG", "answer": "you only live once" }
+
   ],
   "category9":[
     { "src": "./images/bibleVerse/allthings.JPG", "answer": "allthings " },
