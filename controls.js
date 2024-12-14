@@ -180,6 +180,8 @@ function resetApp() {
   location.reload(); // Refresh controls.html
 }
 
+
+const warningSound = new Audio('./sounds/tick.mp3');
 function startTimer(timerId) {
   const otherTimerId = timerId === 1 ? 2 : 1;
 
@@ -194,6 +196,15 @@ pauseTimer(otherTimerId);
          // Trigger flashing effect when timer reaches 5
         if (timers[timerId - 1] === 5) {
           channel.postMessage({ action: "flashTimer", timerId, start: true });
+          warningSound.currentTime = 0; // Restart the sound from the beginning
+          warningSound.play();
+
+          setTimeout(() => {
+            warningSound.pause();
+            warningSound.currentTime = 0; // Reset audio to the start
+          }, 5000); // 5 seconds remaining, so stop after 5 seconds
+
+          
       }
       } else {
         clearInterval(intervals[timerId - 1]);
